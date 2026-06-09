@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/f8b425f122.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "T8wPDZkzeoKYpLgQx",
+      });
+   })();
+</script>
+</head>
+<body>
+    <section id="landing-page">
+        <nav>
+            <figure>
+                <img class="personal-logo" src="./assets/(NR)(2).png" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li id="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">About</a>
+                
+                </li>
+                <li class="nav__link">
+                    <a href="#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black">Contact</a>
+                </li>
+                <li class="nav__link" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black"><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+<div class="header__content">
+    <h1 class="title">Hello</h1>
+    <h1 class="title--secondary"><b class="orange">I'm Noah</b></h1>
+    <p class="header__para">
+        I am a <b class="orange">Frontend Software Developer</b> with a focus on creative design and seamless user experiences. 
+        <br>
+         here's a bit <b class="orange__about" onclick="toggleModal()">more about me</b>.
+    </p>
+    <div class="social__list">
+        <a href="https://www.linkedin.com/in/noah-reed-6643bb274/" target="_blank" class="social__link click"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/bluenoahblue07-max" target="_blank" class="social__link click"><i class="fa-brands fa-github-alt"></i></a>
+        <a href="" download=".assets/Noah_Reed_Resume_revised_RM_2026.pdf" target="_blank" class="social__link click"><i class="fa-solid fa-file-import"></i></a>
+    </div>
+</div>
+        </header>
+        <a href="#">
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-regular fa-envelope"></i>
+        </button>
+        </a>
+        <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+              <h3 class="modal__title modal__title--about">Here's more about me.</h3>
+              <h4 class="modal__sub-title modal__sub-title--about">Frontend software Developer</h4>
+              <p class="mod">
+                I'm a 21 year old, US based <span class="blue">frontend software Developer</span>, with a strong focus on <span class="blue">creative design</span> and <span class="blue">aesthetic quality</span>. As well as clean and <span class="blue">reusable code</span>, and ease of use.
+                <br>I am currently in training with Frontend Simplified in their <span class="blue">coding boot camp</span>, previously working in the <span class="blue">Aerospace </span> sector, <span class="blue">quality</span> and <span class="blue">attention to detail</span> have been a priority to me from day one.
+              </p>
+              <div class="modal__languages">
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/CSS3_icon-icons.com_67069.webp" alt="">
+                    <span class="language__name">CSS</span>
+                </figure>
+                <figure class="modal__language" >
+                    <img class="modal__language--img" src="./assets/javascript-logo-javascript-icon-transparent-free-png.webp" alt="">
+                    <span class="language__name">JAVASCRIPT</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/imgbin_49f40012d36bb86e6f219a7fd00c5048.png" alt="">
+                    <span class="language__name">HTML</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="./assets/React-icon.svg.png" alt="">
+                    <span class="language__name">REACT</span>
+                </figure>
+              </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's Chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    I'm always open to new opportunities.
+                </h3>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my my way!
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                   <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! 
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="projects" class="projects">
+        <div class="projects__container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are a few of my <span class="orange">projects.</span>
+                </h1>
+                <ul class="project__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, Javascript.
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet. Et unde aspernatur
+                                    eos laudantium voluptatem qui omnis vero ea enim excepturi
+                                    vel beatae tenetur ab eaque alias et fugit soluta? Non minima
+                                    expedita quo quidem perspiciatis sit iure labore eum molestias sint. 
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <a href="#" class="project__description--link">
+                                            <i class="fab fa-github"></i>
+                                            <i class="fa-solid fa-link"></i>
+                                        </a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                     <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Car Sales Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, Javascript.
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet. Et unde aspernatur
+                                    eos laudantium voluptatem qui omnis vero ea enim excepturi
+                                    vel beatae tenetur ab eaque alias et fugit soluta? Non minima
+                                    expedita quo quidem perspiciatis sit iure labore eum molestias sint. 
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <a href="#" class="project__description--link">
+                                            <i class="fab fa-github"></i>
+                                            <i class="fa-solid fa-link"></i>
+                                        </a>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+            <figure>
+              <img src="./assets/(NR)(2).png" class="footer__img" alt="">
+            </figure>
+            <div class="footer__social--list">
+                <a href="https://github.com/bluenoahblue07-max" target="_blank" class="
+                link__hover-effect
+                link__hover-effect--white
+                footer__social--link
+                ">
+                  Github                 
+                </a>
+                <a href="https://www.linkedin.com/in/noah-reed-6643bb274/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bd5wRPOdUS%2Bi9CO6%2BE%2Fqr5g%3D%3D" target="_blank" class="
+                link__hover-effect
+                link__hover-effect--white
+                footer__social--link
+                ">
+                  Linkedin                 
+                </a>
+                <a href="#" onclick="toggleModal()" class="
+                link__hover-effect
+                link__hover-effect--white
+                footer__social--link
+                ">
+                  Contact                 
+                </a>
+                <a href="./assets/Noah_Reed_Resume_revised_RM_2026.pdf" target="_blank" class="
+                link__hover-effect
+                link__hover-effect--white
+                footer__social--link
+                ">
+                  Resume                 
+                </a>
+            </div>
+            <div class="footer__copyright">
+                Copyright © 2026 Noah Reed
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
